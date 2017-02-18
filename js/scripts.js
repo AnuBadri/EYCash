@@ -163,7 +163,7 @@ $('.update-btn').click(function() {
 /* update the planning table to new values - simulated by swapping between old/new table */		
 /* inject initial values of the editable options */		
 $('#expandableCell input').eq(0).val('Feature only - Front page');		
-$('#expandableCell input').eq(1).val('$1.99');		
+$('#expandableCell input').eq(1).val('$5.99');		
 /* enable the bottom table to change only if one of the editable values has changed - do nothing otherwise */		
 $('#expandableCell input').change(function() {		
 	$('a[data-toggle="popover"]').click(function() {		
