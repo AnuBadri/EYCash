@@ -261,7 +261,7 @@
 									<!--img class="img-responsive" src="images/EYCash_chart1.png"-->
 									<!--iframe width="1280" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiZDYwODM2YzUtMDA4Yy00YmVlLWE1ZGEtMjFjNTg2OTQ5MTllIiwidCI6ImJlNjM3MzRhLTk2YzUtNGU1NC04MDQ5LTcyYjZhZTEwZTM1NiIsImMiOjZ9" frameborder="0" allowfullscreen="true"></iframe-->
 							</div>
-							<button onclick="ShowDiv('showchart');">Click Here</button>
+							<button onclick="ShowDiv('showchart');">Generate Chart</button>
 						</div>
 						<div class="col col-sm-3">
 							<div class="well panel panel-default content-card ">
@@ -594,10 +594,10 @@
    <script type="text/javascript">
    		function ShowDiv(id) {
 			   var divelement = document.getElementById(id);
-			   if(divelement.style.display == 'none')
-			   divelement.style.display = 'block';
-			   else
+			   if(divelement.style.display == 'block')
 			   divelement.style.display = 'none';
+			   else
+			   divelement.style.display = 'block';
 		   }
    </script>	   
 
