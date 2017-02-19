@@ -254,13 +254,14 @@
 				<div class="report">
 					<div class="row">
 						<div class="col col-sm-9">
-							<div class="panel panel-default content-card">
+							<div id="showchart" style="display:none;" class="panel panel-default content-card">
 								<<!--iframe width="1280" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiZDExYjBlYmYtMGM4OS00ZDRjLTgzZDctOTgyNjJhOWI1NDU4IiwidCI6ImJlNjM3MzRhLTk2YzUtNGU1NC04MDQ5LTcyYjZhZTEwZTM1NiIsImMiOjZ9"
 									frameborder="0" allowFullScreen="true"></iframe>-->
 									<iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiMTdlYWFmM2EtYmQ4My00ODBhLTk3ZjMtZTc3OTZhY2FhNWY0IiwidCI6IjViOTczZjk5LTc3ZGYtNGJlYi1iMjdkLWFhMGM3MGI4NDgyYyIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe>
 									<!--img class="img-responsive" src="images/EYCash_chart1.png"-->
 									<!--iframe width="1280" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiZDYwODM2YzUtMDA4Yy00YmVlLWE1ZGEtMjFjNTg2OTQ5MTllIiwidCI6ImJlNjM3MzRhLTk2YzUtNGU1NC04MDQ5LTcyYjZhZTEwZTM1NiIsImMiOjZ9" frameborder="0" allowfullscreen="true"></iframe-->
 							</div>
+							<input type="button" name="show" value="Show" onclick="ShowDiv()"/>
 						</div>
 						<div class="col col-sm-3">
 							<div class="well panel panel-default content-card ">
@@ -323,7 +324,7 @@
 								<!--<thead> -->
 									<tr>
 										<th>Date</th>
-										<th>January</th>
+											<th>January</th>
 										<th>February</th>
 										<th>March</th>
 										<th>April</th>
@@ -589,7 +590,12 @@
 			return false;
 		}
 	</script>
-
+   
+   <script type="text/javascript">
+   		function ShowDiv() {
+			   document.getElementById('showchart').stye.diplay = "block";
+		   }
+	</script>	   
 
 </body>
 
