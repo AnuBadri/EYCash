@@ -158,6 +158,9 @@ x
 								<li><a href="#">Chocolate Crispy 16 oz </a></li-->
 						</ul>
 					</div>
+
+					
+
 				</div>
 
 				<p class="pull-right visible-xs">
@@ -992,20 +995,7 @@ x
 	<script src="lib/fixed-table/js/fixed_table_rc.js"></script>
 
 	<script src="js/scripts.js"></script>
-	<script type="text/javascript">
-		function loadProducts(id) {
-			var country = document.getElementById('result1').innerHTML;
-			var retailer = document.getElementById('result4').innerHTML;
-			var channel = document.getElementById('result3').innerHTML;
-			var category = document.getElementById('result2').innerHTML;
-			var ppg = document.getElementById('result5').innerHTML;
-			document.getElementById(id).href += "?country=" + country + "&retailer=" + retailer + "&channel=" + channel + "&category=" + category + "&ppg=" + ppg;
-			//    var url = "MyPage2.html?passmonth=" + mymonth + "&passdate=" + myday + "&passyear=" + myyear;
-			//window.location.href = url;
-			//alert(url);
-			return false;
-		}
-	</script>
+	
 	<script type="text/javascript">
 		function getUrlParams() {
 
@@ -1028,9 +1018,25 @@ x
 		document.getElementById('result3').innerHTML = params["channel"] === undefined ? "- Select One -" : params["channel"];
 		document.getElementById('result4').innerHTML = params["retailer"] === undefined ? "- Select One -" : params["retailer"];
 		document.getElementById('result5').innerHTML = params["ppg"] === undefined ? "- Select One -" : params["ppg"];
+		document.getElementById('result6').innerHTML = params["daterange"] === undefined ? "- Select One -" : params["daterange"];
             //var url = "price-diagnostic.html?country=" + country + "&retailer=" + retailer + "&channel=" + channel + "&category=" + category + "&category=" + category;
 	</script>
 
+	<script type="text/javascript">
+		function loadProducts(id) {
+			var country = document.getElementById('result1').innerHTML;
+			var retailer = document.getElementById('result4').innerHTML;
+			var channel = document.getElementById('result3').innerHTML;
+			var category = document.getElementById('result2').innerHTML;
+			var ppg = document.getElementById('result5').innerHTML;
+			var daterange = params["daterange"];
+			document.getElementById(id).href += "?country=" + country + "&retailer=" + retailer + "&channel=" + channel + "&category=" + category + "&ppg=" + ppg + "&daterange=" + daterange;
+			//    var url = "MyPage2.html?passmonth=" + mymonth + "&passdate=" + myday + "&passyear=" + myyear;
+			//window.location.href = url;
+			//alert(url);
+			return false;
+		}
+	</script>
 	<script type = "text/javascript">
 	function replace() {
 		document.getElementById("div1").style.display="none";

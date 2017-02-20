@@ -23,6 +23,25 @@
 
 	<!-- Local stylesheet -->
 	<link href="css/style.css" rel="stylesheet" type="text/css">
+
+	<link href="css/offcanvas.css" rel="stylesheet" type="text/css">
+
+
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" /> -->
+
+	<!-- Include Date Range Picker -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+	
+
+
 </head>
 
 <body>
@@ -160,6 +179,14 @@
 			</div>
 
 			<div class="btn-group">
+				<div id="reportrange" class="pull-right  btn btn-custom dropdown-toggle" style="background: #ffe600; cursor: pointer;width: 100%; height: 46.4px">
+					<!--<i class="glyphicon glyphicon-calendar fa fa-calendar"></i> -->
+					<div class="small">Date Range Selector</div>
+					<span id="result6"></span> <b class="caret"></b>
+				</div>
+			</div>
+
+			<!--<div class="btn-group">
 				<button class="btn btn-custom dropdown-toggle collapsed" aria-expanded="false" aria-controls="dateRangePicker" type="button"
 					data-toggle="collapse" data-target="#dateRangePicker"><span class="small">Date Range Selector</span>&nbsp;<span class="hidden picked-date"><b>01/07/2015 - 06/20/2015</b></span><span
 						class="caret"></span>
@@ -285,7 +312,10 @@
 							</tbody>
 						</table>
 					</div>
-			</div>
+			</div>-->
+
+
+
 		</div>
 	</div>
 	<div class="main container-fluid ft">
@@ -293,645 +323,647 @@
 			<div class="row">
 				<div class="col col-xs-12">
 					<div class="panel panel-default content-card">
-						<iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiYjhiOGEyODQtNmU2Ni00OTE4LTkyZTQtZTI1MTllOTg2NGIwIiwidCI6IjViOTczZjk5LTc3ZGYtNGJlYi1iMjdkLWFhMGM3MGI4NDgyYyIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe>
+						<iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiYjhiOGEyODQtNmU2Ni00OTE4LTkyZTQtZTI1MTllOTg2NGIwIiwidCI6IjViOTczZjk5LTc3ZGYtNGJlYi1iMjdkLWFhMGM3MGI4NDgyYyIsImMiOjF9"
+							frameborder="0" allowFullScreen="true"></iframe>
 							<!--<iframe width="1280" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiN2RhYmZiMDQtNWIxZS00NzI2LTliODMtODRmZTYxMGVmOGYyIiwidCI6ImJlNjM3MzRhLTk2YzUtNGU1NC04MDQ5LTcyYjZhZTEwZTM1NiIsImMiOjZ9"
 							frameborder="0" allowfullscreen="true"></iframe>-->
 					</div>
 				</div>
 			</div>
 		</div>
-	   </div>
-			<div class="row">
-				<div class="col col-xs-12">
-					<div class="ft_container" style="width: 100%; height: 500px;">
-						<!--<div class="ft_rel_container">-->
-							<!--<div class="ft_scroller">-->
-								<table class="ui-widget-header" id="postEventFreezeTableEmpty" style="width: 1504px;">
-									<thead>
-										<tr style="height: 67px;">
-							s				<th style="width: 270px; text-align: left;">Event Description (Based on Duracell Promo Calendars)</th>
-											<th style="width: 135px; text-align: right;">Display Bn$$n Mega Event TPR 5.99</th>
-											<th style="width: 135px; text-align: right;">Display None Feature 5.99</th>
-											<th style="width: 135px; text-align: right;">Display None TPR 5.99</th>
-											<th style="width: 135px; text-align: right;">Roller None TPR 5.99</th>
-											<th style="width: 135px; text-align: right;">Display None Feature 5.99.</th>
-											<th style="width: 135px; text-align: right;">Display None TPR 5.99.</th>
-											<th style="width: 135px; text-align: right;">Display None TPR 5.99..</th>
-											<th style="width: 135px; text-align: right;">Display None Feature 5.99..</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Start Date</strong></td>
-											<td style="text-align: right;">1/24/16</td>
-											<td style="text-align: right;">2/14/16</td>
-											<td style="text-align: right;">2/21/16</td>
-											<td style="text-align: right;">3/13/16</td>
-											<td style="text-align: right;">4/10/16</td>
-											<td style="text-align: right;">4/17/16</td>
-											<td style="text-align: right;">5/29/16</td>
-											<td style="text-align: right;">6/12/16</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>End Date</strong></td>
-											<td style="text-align: right;">2/6/16</td>
-											<td style="text-align: right;">2/20/16</td>
-											<td style="text-align: right;">2/27/16</td>
-											<td style="text-align: right;">3/26/16</td>
-											<td style="text-align: right;">4/16/16</td>
-											<td style="text-align: right;">4/23/16</td>
-											<td style="text-align: right;">6/11/16</td>
-											<td style="text-align: right;">6/18/16</td>
-										</tr>	
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Duration (Weeks)</strong></td>
-											<td style="text-align: right;">2</td>
-											<td style="text-align: right;">1</td>
-											<td style="text-align: right;">1</td>
-											<td style="text-align: right;">2</td>
-											<td style="text-align: right;">1</td>
-											<td style="text-align: right;">1</td>
-											<td style="text-align: right;">2</td>
-											<td style="text-align: right;">1</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Baseline Consumption Units</strong></td>
-											<td style="text-align: right;">51,119</td>
-											<td style="text-align: right;">22,953</td>
-											<td style="text-align: right;">24,274</td>
-											<td style="text-align: right;">48,876</td>
-											<td style="text-align: right;">25,158</td>
-											<td style="text-align: right;">27,190</td>
-											<td style="text-align: right;">54,588</td>
-											<td style="text-align: right;">28,065</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 49px;">
-											<td style="text-align: left;"><strong>ePOS/Consumption Retail Sales Volume (Units)</strong></td>
-											<td style="text-align: right;">53,449</td>
-											<td style="text-align: right;">28,824</td>
-											<td style="text-align: right;">30,502</td>
-											<td style="text-align: right;">54,151</td>
-											<td style="text-align: right;">25,559</td>
-											<td style="text-align: right;">28,751</td>
-											<td style="text-align: right;">58,679</td>
-											<td style="text-align: right;">30,632</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 49px;">
-											<td style="text-align: left;"><strong>ePOS/Consumption Retail Sales Revenue ($)</strong></td>
-											<td style="text-align: right;">$333,440</td>
-										    <td style="text-align: right;">$179,904</td>
-											<td style="text-align: right;">$184,438</td>
-											<td style="text-align: right;">$336,156</td>
-											<td style="text-align: right;">$158,957</td>
-											<td style="text-align: right;">$173,528</td>
-											<td style="text-align: right;">$363,696</td>
-											<td style="text-align: right;">$186,911</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>List Price to retailer per unit</strong></td>
-											<td style="text-align: right;">$5.60</td>
-											<td style="text-align: right;">$5.60</td>
-											<td style="text-align: right;">$5.60</td>
-											<td style="text-align: right;">$5.60</td>
-											<td style="text-align: right;">$5.60</td>
-											<td style="text-align: right;">$5.60</td>
-											<td style="text-align: right;">$5.60</td>
-											<td style="text-align: right;">$5.60</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Everyday spend per unit</strong></td>
-											<td style="text-align: right;">$0.67</td>
-											<td style="text-align: right;">$0.67</td>
-											<td style="text-align: right;">$0.67</td>
-											<td style="text-align: right;">$0.67</td>
-											<td style="text-align: right;">$0.67</td>
-											<td style="text-align: right;">$0.67</td>
-										    <td style="text-align: right;">$0.67</td>
-											<td style="text-align: right;">$0.67</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-									        <td style="text-align: left;"><strong>Base/Everyday Price per Unit ($)</strong></td>
-											<td style="text-align: right;">$4.93</td>
-											<td style="text-align: right;">$4.93</td>
-											<td style="text-align: right;">$4.93</td>
-											<td style="text-align: right;">$4.93</td>
-											<td style="text-align: right;">$4.93</td>
-										    <td style="text-align: right;">$4.93</td>
-								            <td style="text-align: right;">$4.93</td>
-											<td style="text-align: right;">$4.93</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Promoted Price to Retailer ($)</strong></td>
-											<td style="text-align: right;">$4.15</td>
-									        <td style="text-align: right;">$4.31</td>
-											<td style="text-align: right;">$4.31</td>
-										    <td style="text-align: right;">$4.38</td>
-										    <td style="text-align: right;">$4.44</td>
-											<td style="text-align: right;">$4.41</td>
-											<td style="text-align: right;">$4.40</td>
-											<td style="text-align: right;">$4.39</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Base/Everyday Price to Consumer ($)</strong></td>
-											<td style="text-align: right;">$6.83</td>
-										    <td style="text-align: right;">$6.78</td>
-											<td style="text-align: right;">$6.71</td>
-											<td style="text-align: right;">$6.65</td>
-											<td style="text-align: right;">$6.79</td>
-										    <td style="text-align: right;">$6.69</td>
-											<td style="text-align: right;">$6.76</td>
-											<td style="text-align: right;">$6.76</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-										    <td style="text-align: left;"><strong>Promoted Price to Consumer ($)</strong></td>
-									        <td style="text-align: right;">$6.24</td>
-										    <td style="text-align: right;">$6.24</td>
-											<td style="text-align: right;">$6.05</td>
-											<td style="text-align: right;">$6.21</td>
-									        <td style="text-align: right;">$6.22</td>
-											<td style="text-align: right;">$6.04</td>
-											<td style="text-align: right;">$6.20</td>
-											<td style="text-align: right;">$6.10</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-										    <td style="text-align: left;"><strong>% Price Discount to Consumer</strong></td>
-											<td style="text-align: right;">9%</td>
-										    <td style="text-align: right;">8%</td>
-										    <td style="text-align: right;">10%</td>
-										    <td style="text-align: right;">7%</td>
-											<td style="text-align: right;">8%</td>
-											<td style="text-align: right;">10%</td>
-											<td style="text-align: right;">8%</td>
-											<td style="text-align: right;">10%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-										    <td style="text-align: left;"><strong>% ACV TPR (wtd)</strong></td>
-										    <td style="text-align: right;">39%</td>
-											<td style="text-align: right;">13%</td>
-											<td style="text-align: right;">32%</td>
-											<td style="text-align: right;">23%</td>
-											<td style="text-align: right;">7%</td>
-											<td style="text-align: right;">26%</td>
-										    <td style="text-align: right;">45%</td>
-									     	<td style="text-align: right;">11%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-										    <td style="text-align: left;"><strong>% ACV Feature (wtd)</strong></td>
-											<td style="text-align: right;">0%</td>
-										    <td style="text-align: right;">51%</td>
-											<td style="text-align: right;">0%</td>
-											<td style="text-align: right;">3%</td>
-											<td style="text-align: right;">59%</td>
-										    <td style="text-align: right;">0%</td>
-										    <td style="text-align: right;">4%</td>
-										    <td style="text-align: right;">73%</td>
-										</tr>
-										    <tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>% ACV Display (wtd)</strong></td>
-										    <td style="text-align: right;">11%</td>
-											<td style="text-align: right;">2%</td>
-											<td style="text-align: right;">10%</td>
-											<td style="text-align: right;">8%</td>
-											<td style="text-align: right;">3%</td>
-											<td style="text-align: right;">5%</td>
-											<td style="text-align: right;">3%</td>
-											<td style="text-align: right;">0%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>% ACV Feature &amp; Display (wtd)</strong></td>
-											<td style="text-align: right;">0%</td>
-											<td style="text-align: right;">12%</td>
-											<td style="text-align: right;">0%</td>
-											<td style="text-align: right;">0%</td>
-											<td style="text-align: right;">3%</td>
-											<td style="text-align: right;">0%</td>
-											<td style="text-align: right;">0%</td>
-											<td style="text-align: right;">4%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>% $ Revenue Sold on TPR</strong></td>
-											<td style="text-align: right;">33%</td>
-											<td style="text-align: right;">12%</td>
-											<td style="text-align: right;">27%</td>
-							                <td style="text-align: right;">18%</td>
-											<td style="text-align: right;">6%</td>
-											<td style="text-align: right;">21%</td>
-											<td style="text-align: right;">38%</td>
-											<td style="text-align: right;">7%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>% $ Revenue Sold on Feature</strong></td>
-											<td style="text-align: right;">10%</td>
-											<td style="text-align: right;">1%</td>
-											<td style="text-align: right;">9%</td>
-											<td style="text-align: right;">7%</td>
-											<td style="text-align: right;">2%</td>
-											<td style="text-align: right;">4%</td>
-											<td style="text-align: right;">3%</td>
-											<td style="text-align: right;">0%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>% $ Revenue Sold on Display</strong></td>
-											<td style="text-align: right;">10%</td>
-											<td style="text-align: right;">1%</td>
-											<td style="text-align: right;">9%</td>
-											<td style="text-align: right;">7%</td>
-											<td style="text-align: right;">2%</td>
-											<td style="text-align: right;">4%</td>
-											<td style="text-align: right;">3%</td>
-											<td style="text-align: right;">0%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>% $ Revenue Sold on Feature and Display</strong></td>
-											<td style="text-align: right;">0%</td>
-											<td style="text-align: right;">10%</td>
-											<td style="text-align: right;">0%</td>
-											<td style="text-align: right;">0%</td>
-											<td style="text-align: right;">2%</td>
-											<td style="text-align: right;">0%</td>
-											<td style="text-align: right;">0%</td>
-											<td style="text-align: right;">4%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 49px;">										
-											<td style="text-align: left;"><strong>Other Causals (e.g., Shopper Mktg, New Prd Intros)</strong></td>
-											<td style="text-align: right;">Bnn$n Mega Event</td>
-											<td style="text-align: right;">None</td>
-											<td style="text-align: right;">None</td>
-											<td style="text-align: right;">None</td>
-											<td style="text-align: right;">None</td>
-											<td style="text-align: right;">None</td>
-											<td style="text-align: right;">None</td>
-											<td style="text-align: right;">None</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Variable Event Cost ($)</strong></td>
-											<td style="text-align: right;">$27,216</td>
-											<td style="text-align: right;">$17,769</td>
-											<td style="text-align: right;">$18,814</td>
-											<td style="text-align: right;">$29,527</td>
-											<td style="text-align: right;">$12,538</td>
-											<td style="text-align: right;">$14,846</td>
-											<td style="text-align: right;">$30,906</td>
-											<td style="text-align: right;">$16,423</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Fixed Event Cost ($)</strong></td>
-											<td style="text-align: right;">$14,531</td>
-											<td style="text-align: right;">$0</td>
-											<td style="text-align: right;">$0</td>
-											<td style="text-align: right;">$0</td>
-											<td style="text-align: right;">$0</td>
-											<td style="text-align: right;">$0</td>
-											<td style="text-align: right;">$0</td>
-											<td style="text-align: right;">$0</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Other Event Cost (GNS,SM) ($)</strong></td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Total Event Cost ($)</strong></td>
-											<td style="text-align: right;">$41,748</td>
-											<td style="text-align: right;">$17,769</td>
-											<td style="text-align: right;">$18,814</td>
-											<td style="text-align: right;">$29,527</td>
-											<td style="text-align: right;">$12,538</td>
-											<td style="text-align: right;">$14,846</td>
-											<td style="text-align: right;">$30,906</td>
-											<td style="text-align: right;">$16,423</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Key Performance Indicators (KPIs)</strong></td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-											<td style="text-align: right;">&nbsp;</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Duracell ROI %</strong></td>
-											<td style="text-align: right;">-26%</td>
-											<td style="text-align: right;">63%</td>
-											<td style="text-align: right;">66%</td>
-											<td style="text-align: right;">23%</td>
-											<td style="text-align: right;">-75%</td>
-											<td style="text-align: right;">-40%</td>
-											<td style="text-align: right;">-25%</td>
-											<td style="text-align: right;">-22%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Duracell Event % Sales Uplift</strong></td>
-											<td style="text-align: right;">14%</td>
-											<td style="text-align: right;">30%</td>
-											<td style="text-align: right;">30%</td>
-											<td style="text-align: right;">18%</td>
-											<td style="text-align: right;">3%</td>
-											<td style="text-align: right;">8%</td>
-											<td style="text-align: right;">10%</td>
-											<td style="text-align: right;">11%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Duracell Incremental Volume (Units)</strong></td>
-											<td style="text-align: right;">7,221</td>
-											<td style="text-align: right;">6,807</td>
-											<td style="text-align: right;">7,336</td>
-											<td style="text-align: right;">8,578</td>
-											<td style="text-align: right;">728</td>
-											<td style="text-align: right;">2,080</td>
-											<td style="text-align: right;">5,444</td>
-											<td style="text-align: right;">3,001</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Duracell Incremental Revenue ($)</strong></td>
-											<td style="text-align: right;">$29,960</td>
-											<td style="text-align: right;">$29,361</td>
-											<td style="text-align: right;">$31,643</td>
-											<td style="text-align: right;">$37,614</td>
-											<td style="text-align: right;">$3,231</td>
-											<td style="text-align: right;">$9,181</td>
-											<td style="text-align: right;">$23,970</td>
-											<td style="text-align: right;">$13,184</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Duracell Incremental Gross Profit ($)</strong></td>
-											<td style="text-align: right;">$11,058</td>
-											<td style="text-align: right;">$11,160</td>
-											<td style="text-align: right;">$12,365</td>
-											<td style="text-align: right;">$6,931</td>
-											<td style="text-align: right;">$9,445</td>
-											<td style="text-align: right;">$6,006</td>
-											<td style="text-align: right;">$7,771</td>
-											<td style="text-align: right;">$3,671</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 49px;">
-											<td style="text-align: left;"><strong>Less Cannibalization Units (Halo) (Units)</strong></td>
-											<td style="text-align: right;">(889)</td>
-											<td style="text-align: right;">(349)</td>
-											<td style="text-align: right;">(465)</td>
-											<td style="text-align: right;">(777)</td>
-											<td style="text-align: right;">(326)</td>
-											<td style="text-align: right;">(519)</td>
-											<td style="text-align: right;">(785)</td>
-											<td style="text-align: right;">(434)</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 49px;">
-											<td style="text-align: left;"><strong>Plus Forward Buy (Pantry Loading) (Units)</strong></td>
-											<td style="text-align: right;">0</td>
-											<td style="text-align: right;">0</td>
-											<td style="text-align: right;">0</td>
-											<td style="text-align: right;">0</td>
-											<td style="text-align: right;">0</td>
-											<td style="text-align: right;">0</td>
-											<td style="text-align: right;">0</td>
-											<td style="text-align: right;">0</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Less Competitive Impact (Units)</strong></td>
-											<td style="text-align: right;">(4,002)</td>
-											<td style="text-align: right;">(587)</td>
-											<td style="text-align: right;">(644)</td>
-											<td style="text-align: right;">(2,526)</td>
-											<td style="text-align: right;">0</td>
-											<td style="text-align: right;">0</td>
-											<td style="text-align: right;">(568)</td>
-											<td style="text-align: right;">0</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Duracell Event Actual ROI (%)</strong></td>
-											<td style="text-align: right;">-76%</td>
-											<td style="text-align: right;">40%</td>
-											<td style="text-align: right;">41%</td>
-											<td style="text-align: right;">-24%</td>
-											<td style="text-align: right;">-86%</td>
-											<td style="text-align: right;">-55%</td>
-											<td style="text-align: right;">-44%</td>
-											<td style="text-align: right;">-34%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Duracell Event Actual Sales Uplift (%)</strong></td>
-											<td style="text-align: right;">5%</td>
-											<td style="text-align: right;">26%</td>
-											<td style="text-align: right;">26%</td>
-											<td style="text-align: right;">11%</td>
-											<td style="text-align: right;">2%</td>
-											<td style="text-align: right;">6%</td>
-											<td style="text-align: right;">7%</td>											
-											<td style="text-align: right;">9%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 49px;">
-											<td style="text-align: left;"><strong>Duracell Actual Incremental Volume (Units)</strong></td>
-											<td style="text-align: right;">2,330</td>
-											<td style="text-align: right;">5,871</td>
-											<td style="text-align: right;">6,228</td>
-											<td style="text-align: right;">5,275</td>
-											<td style="text-align: right;">402</td>
-											<td style="text-align: right;">1,561</td>
-											<td style="text-align: right;">4,090</td>
-											<td style="text-align: right;">2,567</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 49px;">
-											<td style="text-align: left;"><strong>Duracell Actual Incremental Revenue ($) </strong></td>
-											<td style="text-align: right;">$9,666</td>
-											<td style="text-align: right;">$25,325</td>
-											<td style="text-align: right;">$26,862</td>
-											<td style="text-align: right;">$23,128</td>
-											<td style="text-align: right;">$1,783</td>
-											<td style="text-align: right;">$6,890</td>
-											<td style="text-align: right;">$18,011</td>
-											<td style="text-align: right;">$11,278</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Duracell Actual Incremental Profit ($)</strong></td>
-											<td style="text-align: right;">($31,846)</td>
-											<td style="text-align: right;">$7,183</td>
-											<td style="text-align: right;">$7,655</td>
-											<td style="text-align: right;">($7,109)</td>
-											<td style="text-align: right;">($10,831)</td>
-											<td style="text-align: right;">($8,21)1</td>
-											<td style="text-align: right;">($13,523)</td>
-											<td style="text-align: right;">($5,514)</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Cost per Incremental Unit (Vol)</strong></td>
-											<td style="text-align: right;">$17.92</td>
-											<td style="text-align: right;">$3.03</td>
-											<td style="text-align: right;">$3.02</td>
-											<td style="text-align: right;">$5.60</td>
-											<td style="text-align: right;">$31.22</td>
-											<td style="text-align: right;">$9.51</td>
-											<td style="text-align: right;">$7.56</td>
-											<td style="text-align: right;">$6.40</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Cost per Incremental Dollar (Rev)</strong></td>
-											<td style="text-align: right;">$4.32</td>
-											<td style="text-align: right;">$0.70</td>
-											<td style="text-align: right;">$0.70</td>
-											<td style="text-align: right;">$1.28</td>
-											<td style="text-align: right;">$7.03</td>
-											<td style="text-align: right;">$2.15</td>
-											<td style="text-align: right;">$1.72</td>
-											<td style="text-align: right;">$1.46</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Profit per Incremental Unit ($)</strong></td>
-											<td style="text-align: right;">($13.67)</td>
-											<td style="text-align: right;">$1.22</td>
-											<td style="text-align: right;">$1.23</td>
-											<td style="text-align: right;">($1.35)</td>
-											<td style="text-align: right;">($26.97)</td>
-											<td style="text-align: right;">($5.26)</td>
-											<td style="text-align: right;">($3.31)</td>
-											<td style="text-align: right;">($2.15)</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>% Trade Pass-Thru (%)</strong></td>
-											<td style="text-align: right;">76%</td>
-											<td style="text-align: right;">88%</td>
-											<td style="text-align: right;">108%</td>
-											<td style="text-align: right;">82%</td>
-											<td style="text-align: right;">116%</td>
-											<td style="text-align: right;">127%</td>
-											<td style="text-align: right;">108%</td>
-											<td style="text-align: right;">124%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Retailer Promo Margin(%)</strong></td>
-											<td style="text-align: right;">33%</td>
-											<td style="text-align: right;">31%</td>
-											<td style="text-align: right;">29%</td>
-											<td style="text-align: right;">29%</td>
-											<td style="text-align: right;">29%</td>
-											<td style="text-align: right;">27%</td>
-											<td style="text-align: right;">29%</td>
-											<td style="text-align: right;">28%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Retailer Incremental Revenue ($)</strong></td>
-											<td style="text-align: right;">$14,535</td>
-											<td style="text-align: right;">$36,643</td>
-											<td style="text-align: right;">$37,658</td>
-											<td style="text-align: right;">$32,744</td>
-											<td style="text-align: right;">$2,497</td>
-											<td style="text-align: right;">$9,422</td>
-											<td style="text-align: right;">$25,352</td>
-											<td style="text-align: right;">$15,662</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Retailer Incremental Profit ($)</strong></td>
-											<td style="text-align: right;">$4,868</td>
-											<td style="text-align: right;">$11,319</td>
-											<td style="text-align: right;">$10,796</td>
-											<td style="text-align: right;">$9,616</td>
-											<td style="text-align: right;">$715</td>
-											<td style="text-align: right;">$2,532</td>
-											<td style="text-align: right;">$7,341</td>
-											<td style="text-align: right;">$4,384</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Incremental Consumption Units</strong></td>
-											<td style="text-align: right;">2,330</td>
-											<td style="text-align: right;">5,871</td>
-											<td style="text-align: right;">6,228</td>
-											<td style="text-align: right;">5,275</td>
-											<td style="text-align: right;">402</td>
-											<td style="text-align: right;">1,561</td>
-											<td style="text-align: right;">4,090</td>
-											<td style="text-align: right;">2,567</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>PPG Gross Margin($)</strong></td>
-											<td style="text-align: right;">$4.25</td>
-											<td style="text-align: right;">$4.25</td>
-											<td style="text-align: right;">$4.25</td>
-											<td style="text-align: right;">$4.25</td>
-											<td style="text-align: right;">$4.25</td>
-											<td style="text-align: right;">$4.25</td>
-											<td style="text-align: right;">$4.25</td>
-											<td style="text-align: right;">$4.25</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>PPG Fross Margin  (%)</strong></td>
-											<td style="text-align: right;">76%</td>
-											<td style="text-align: right;">76%</td>
-											<td style="text-align: right;">76%</td>
-											<td style="text-align: right;">76%</td>
-											<td style="text-align: right;">76%</td>
-											<td style="text-align: right;">76%</td>
-											<td style="text-align: right;">76%</td>
-											<td style="text-align: right;">76%</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Floor Price ($)</strong></td>
-											<td style="text-align: right;">$5.99</td>
-											<td style="text-align: right;">$5.99</td>
-											<td style="text-align: right;">$5.99</td>
-											<td style="text-align: right;">$5.99</td>
-											<td style="text-align: right;">$5.99</td>
-											<td style="text-align: right;">$5.99</td>
-											<td style="text-align: right;">$5.99</td>
-											<td style="text-align: right;">$5.99</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Net Unit Cost($)</strong></td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>Retailer Net Unit Cost ($)</strong></td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-											<td style="text-align: right;">$4.45</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align: left;"><strong>ScanAmount ($)</strong></td>
-											<td style="text-align: right;">$0.48</td>
-											<td style="text-align: right;">$0.48</td>
-											<td style="text-align: right;">$0.48</td>
-											<td style="text-align: right;">$0.48</td>
-											<td style="text-align: right;">$0.48</td>
-											<td style="text-align: right;">$0.48</td>
-											<td style="text-align: right;">$0.48</td>
-											<td style="text-align: right;">$0.48</td>
-										</tr>
-											<tr class="ui-widget-content" style="height: 31px;">
-											<td style="text-align:left"><strong>Scan Dollars ($)</strong></td>
-											<td style="text-align: right;">$25,655</td>
-											<td style="text-align: right;">$13,836</td>
-											<td style="text-align: right;">$14,641</td>
-											<td style="text-align: right;">$25,993</td>
-											<td style="text-align: right;">$12,269</td>
-											<td style="text-align: right;">$13,800</td>
-											<td style="text-align: right;">$28,166</td>
-											<td style="text-align: right;">$14,703</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-				<!--</div>
+	</div>
+	<div class="row">
+		<div class="col col-xs-12">
+			<div class="ft_container" style="width: 100%; height: 500px;">
+				<!--<div class="ft_rel_container">-->
+				<!--<div class="ft_scroller">-->
+				<table class="ui-widget-header" id="postEventFreezeTableEmpty" style="width: 1504px;">
+					<thead>
+						<tr style="height: 67px;">
+							s
+							<th style="width: 270px; text-align: left;">Event Description (Based on Duracell Promo Calendars)</th>
+							<th style="width: 135px; text-align: right;">Display Bn$$n Mega Event TPR 5.99</th>
+							<th style="width: 135px; text-align: right;">Display None Feature 5.99</th>
+							<th style="width: 135px; text-align: right;">Display None TPR 5.99</th>
+							<th style="width: 135px; text-align: right;">Roller None TPR 5.99</th>
+							<th style="width: 135px; text-align: right;">Display None Feature 5.99.</th>
+							<th style="width: 135px; text-align: right;">Display None TPR 5.99.</th>
+							<th style="width: 135px; text-align: right;">Display None TPR 5.99..</th>
+							<th style="width: 135px; text-align: right;">Display None Feature 5.99..</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Start Date</strong></td>
+							<td style="text-align: right;">1/24/16</td>
+							<td style="text-align: right;">2/14/16</td>
+							<td style="text-align: right;">2/21/16</td>
+							<td style="text-align: right;">3/13/16</td>
+							<td style="text-align: right;">4/10/16</td>
+							<td style="text-align: right;">4/17/16</td>
+							<td style="text-align: right;">5/29/16</td>
+							<td style="text-align: right;">6/12/16</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>End Date</strong></td>
+							<td style="text-align: right;">2/6/16</td>
+							<td style="text-align: right;">2/20/16</td>
+							<td style="text-align: right;">2/27/16</td>
+							<td style="text-align: right;">3/26/16</td>
+							<td style="text-align: right;">4/16/16</td>
+							<td style="text-align: right;">4/23/16</td>
+							<td style="text-align: right;">6/11/16</td>
+							<td style="text-align: right;">6/18/16</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Duration (Weeks)</strong></td>
+							<td style="text-align: right;">2</td>
+							<td style="text-align: right;">1</td>
+							<td style="text-align: right;">1</td>
+							<td style="text-align: right;">2</td>
+							<td style="text-align: right;">1</td>
+							<td style="text-align: right;">1</td>
+							<td style="text-align: right;">2</td>
+							<td style="text-align: right;">1</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Baseline Consumption Units</strong></td>
+							<td style="text-align: right;">51,119</td>
+							<td style="text-align: right;">22,953</td>
+							<td style="text-align: right;">24,274</td>
+							<td style="text-align: right;">48,876</td>
+							<td style="text-align: right;">25,158</td>
+							<td style="text-align: right;">27,190</td>
+							<td style="text-align: right;">54,588</td>
+							<td style="text-align: right;">28,065</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 49px;">
+							<td style="text-align: left;"><strong>ePOS/Consumption Retail Sales Volume (Units)</strong></td>
+							<td style="text-align: right;">53,449</td>
+							<td style="text-align: right;">28,824</td>
+							<td style="text-align: right;">30,502</td>
+							<td style="text-align: right;">54,151</td>
+							<td style="text-align: right;">25,559</td>
+							<td style="text-align: right;">28,751</td>
+							<td style="text-align: right;">58,679</td>
+							<td style="text-align: right;">30,632</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 49px;">
+							<td style="text-align: left;"><strong>ePOS/Consumption Retail Sales Revenue ($)</strong></td>
+							<td style="text-align: right;">$333,440</td>
+							<td style="text-align: right;">$179,904</td>
+							<td style="text-align: right;">$184,438</td>
+							<td style="text-align: right;">$336,156</td>
+							<td style="text-align: right;">$158,957</td>
+							<td style="text-align: right;">$173,528</td>
+							<td style="text-align: right;">$363,696</td>
+							<td style="text-align: right;">$186,911</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>List Price to retailer per unit</strong></td>
+							<td style="text-align: right;">$5.60</td>
+							<td style="text-align: right;">$5.60</td>
+							<td style="text-align: right;">$5.60</td>
+							<td style="text-align: right;">$5.60</td>
+							<td style="text-align: right;">$5.60</td>
+							<td style="text-align: right;">$5.60</td>
+							<td style="text-align: right;">$5.60</td>
+							<td style="text-align: right;">$5.60</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Everyday spend per unit</strong></td>
+							<td style="text-align: right;">$0.67</td>
+							<td style="text-align: right;">$0.67</td>
+							<td style="text-align: right;">$0.67</td>
+							<td style="text-align: right;">$0.67</td>
+							<td style="text-align: right;">$0.67</td>
+							<td style="text-align: right;">$0.67</td>
+							<td style="text-align: right;">$0.67</td>
+							<td style="text-align: right;">$0.67</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Base/Everyday Price per Unit ($)</strong></td>
+							<td style="text-align: right;">$4.93</td>
+							<td style="text-align: right;">$4.93</td>
+							<td style="text-align: right;">$4.93</td>
+							<td style="text-align: right;">$4.93</td>
+							<td style="text-align: right;">$4.93</td>
+							<td style="text-align: right;">$4.93</td>
+							<td style="text-align: right;">$4.93</td>
+							<td style="text-align: right;">$4.93</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Promoted Price to Retailer ($)</strong></td>
+							<td style="text-align: right;">$4.15</td>
+							<td style="text-align: right;">$4.31</td>
+							<td style="text-align: right;">$4.31</td>
+							<td style="text-align: right;">$4.38</td>
+							<td style="text-align: right;">$4.44</td>
+							<td style="text-align: right;">$4.41</td>
+							<td style="text-align: right;">$4.40</td>
+							<td style="text-align: right;">$4.39</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Base/Everyday Price to Consumer ($)</strong></td>
+							<td style="text-align: right;">$6.83</td>
+							<td style="text-align: right;">$6.78</td>
+							<td style="text-align: right;">$6.71</td>
+							<td style="text-align: right;">$6.65</td>
+							<td style="text-align: right;">$6.79</td>
+							<td style="text-align: right;">$6.69</td>
+							<td style="text-align: right;">$6.76</td>
+							<td style="text-align: right;">$6.76</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Promoted Price to Consumer ($)</strong></td>
+							<td style="text-align: right;">$6.24</td>
+							<td style="text-align: right;">$6.24</td>
+							<td style="text-align: right;">$6.05</td>
+							<td style="text-align: right;">$6.21</td>
+							<td style="text-align: right;">$6.22</td>
+							<td style="text-align: right;">$6.04</td>
+							<td style="text-align: right;">$6.20</td>
+							<td style="text-align: right;">$6.10</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>% Price Discount to Consumer</strong></td>
+							<td style="text-align: right;">9%</td>
+							<td style="text-align: right;">8%</td>
+							<td style="text-align: right;">10%</td>
+							<td style="text-align: right;">7%</td>
+							<td style="text-align: right;">8%</td>
+							<td style="text-align: right;">10%</td>
+							<td style="text-align: right;">8%</td>
+							<td style="text-align: right;">10%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>% ACV TPR (wtd)</strong></td>
+							<td style="text-align: right;">39%</td>
+							<td style="text-align: right;">13%</td>
+							<td style="text-align: right;">32%</td>
+							<td style="text-align: right;">23%</td>
+							<td style="text-align: right;">7%</td>
+							<td style="text-align: right;">26%</td>
+							<td style="text-align: right;">45%</td>
+							<td style="text-align: right;">11%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>% ACV Feature (wtd)</strong></td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">51%</td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">3%</td>
+							<td style="text-align: right;">59%</td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">4%</td>
+							<td style="text-align: right;">73%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>% ACV Display (wtd)</strong></td>
+							<td style="text-align: right;">11%</td>
+							<td style="text-align: right;">2%</td>
+							<td style="text-align: right;">10%</td>
+							<td style="text-align: right;">8%</td>
+							<td style="text-align: right;">3%</td>
+							<td style="text-align: right;">5%</td>
+							<td style="text-align: right;">3%</td>
+							<td style="text-align: right;">0%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>% ACV Feature &amp; Display (wtd)</strong></td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">12%</td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">3%</td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">4%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>% $ Revenue Sold on TPR</strong></td>
+							<td style="text-align: right;">33%</td>
+							<td style="text-align: right;">12%</td>
+							<td style="text-align: right;">27%</td>
+							<td style="text-align: right;">18%</td>
+							<td style="text-align: right;">6%</td>
+							<td style="text-align: right;">21%</td>
+							<td style="text-align: right;">38%</td>
+							<td style="text-align: right;">7%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>% $ Revenue Sold on Feature</strong></td>
+							<td style="text-align: right;">10%</td>
+							<td style="text-align: right;">1%</td>
+							<td style="text-align: right;">9%</td>
+							<td style="text-align: right;">7%</td>
+							<td style="text-align: right;">2%</td>
+							<td style="text-align: right;">4%</td>
+							<td style="text-align: right;">3%</td>
+							<td style="text-align: right;">0%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>% $ Revenue Sold on Display</strong></td>
+							<td style="text-align: right;">10%</td>
+							<td style="text-align: right;">1%</td>
+							<td style="text-align: right;">9%</td>
+							<td style="text-align: right;">7%</td>
+							<td style="text-align: right;">2%</td>
+							<td style="text-align: right;">4%</td>
+							<td style="text-align: right;">3%</td>
+							<td style="text-align: right;">0%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>% $ Revenue Sold on Feature and Display</strong></td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">10%</td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">2%</td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">0%</td>
+							<td style="text-align: right;">4%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 49px;">
+							<td style="text-align: left;"><strong>Other Causals (e.g., Shopper Mktg, New Prd Intros)</strong></td>
+							<td style="text-align: right;">Bnn$n Mega Event</td>
+							<td style="text-align: right;">None</td>
+							<td style="text-align: right;">None</td>
+							<td style="text-align: right;">None</td>
+							<td style="text-align: right;">None</td>
+							<td style="text-align: right;">None</td>
+							<td style="text-align: right;">None</td>
+							<td style="text-align: right;">None</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Variable Event Cost ($)</strong></td>
+							<td style="text-align: right;">$27,216</td>
+							<td style="text-align: right;">$17,769</td>
+							<td style="text-align: right;">$18,814</td>
+							<td style="text-align: right;">$29,527</td>
+							<td style="text-align: right;">$12,538</td>
+							<td style="text-align: right;">$14,846</td>
+							<td style="text-align: right;">$30,906</td>
+							<td style="text-align: right;">$16,423</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Fixed Event Cost ($)</strong></td>
+							<td style="text-align: right;">$14,531</td>
+							<td style="text-align: right;">$0</td>
+							<td style="text-align: right;">$0</td>
+							<td style="text-align: right;">$0</td>
+							<td style="text-align: right;">$0</td>
+							<td style="text-align: right;">$0</td>
+							<td style="text-align: right;">$0</td>
+							<td style="text-align: right;">$0</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Other Event Cost (GNS,SM) ($)</strong></td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Total Event Cost ($)</strong></td>
+							<td style="text-align: right;">$41,748</td>
+							<td style="text-align: right;">$17,769</td>
+							<td style="text-align: right;">$18,814</td>
+							<td style="text-align: right;">$29,527</td>
+							<td style="text-align: right;">$12,538</td>
+							<td style="text-align: right;">$14,846</td>
+							<td style="text-align: right;">$30,906</td>
+							<td style="text-align: right;">$16,423</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Key Performance Indicators (KPIs)</strong></td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+							<td style="text-align: right;">&nbsp;</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Duracell ROI %</strong></td>
+							<td style="text-align: right;">-26%</td>
+							<td style="text-align: right;">63%</td>
+							<td style="text-align: right;">66%</td>
+							<td style="text-align: right;">23%</td>
+							<td style="text-align: right;">-75%</td>
+							<td style="text-align: right;">-40%</td>
+							<td style="text-align: right;">-25%</td>
+							<td style="text-align: right;">-22%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Duracell Event % Sales Uplift</strong></td>
+							<td style="text-align: right;">14%</td>
+							<td style="text-align: right;">30%</td>
+							<td style="text-align: right;">30%</td>
+							<td style="text-align: right;">18%</td>
+							<td style="text-align: right;">3%</td>
+							<td style="text-align: right;">8%</td>
+							<td style="text-align: right;">10%</td>
+							<td style="text-align: right;">11%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Duracell Incremental Volume (Units)</strong></td>
+							<td style="text-align: right;">7,221</td>
+							<td style="text-align: right;">6,807</td>
+							<td style="text-align: right;">7,336</td>
+							<td style="text-align: right;">8,578</td>
+							<td style="text-align: right;">728</td>
+							<td style="text-align: right;">2,080</td>
+							<td style="text-align: right;">5,444</td>
+							<td style="text-align: right;">3,001</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Duracell Incremental Revenue ($)</strong></td>
+							<td style="text-align: right;">$29,960</td>
+							<td style="text-align: right;">$29,361</td>
+							<td style="text-align: right;">$31,643</td>
+							<td style="text-align: right;">$37,614</td>
+							<td style="text-align: right;">$3,231</td>
+							<td style="text-align: right;">$9,181</td>
+							<td style="text-align: right;">$23,970</td>
+							<td style="text-align: right;">$13,184</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Duracell Incremental Gross Profit ($)</strong></td>
+							<td style="text-align: right;">$11,058</td>
+							<td style="text-align: right;">$11,160</td>
+							<td style="text-align: right;">$12,365</td>
+							<td style="text-align: right;">$6,931</td>
+							<td style="text-align: right;">$9,445</td>
+							<td style="text-align: right;">$6,006</td>
+							<td style="text-align: right;">$7,771</td>
+							<td style="text-align: right;">$3,671</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 49px;">
+							<td style="text-align: left;"><strong>Less Cannibalization Units (Halo) (Units)</strong></td>
+							<td style="text-align: right;">(889)</td>
+							<td style="text-align: right;">(349)</td>
+							<td style="text-align: right;">(465)</td>
+							<td style="text-align: right;">(777)</td>
+							<td style="text-align: right;">(326)</td>
+							<td style="text-align: right;">(519)</td>
+							<td style="text-align: right;">(785)</td>
+							<td style="text-align: right;">(434)</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 49px;">
+							<td style="text-align: left;"><strong>Plus Forward Buy (Pantry Loading) (Units)</strong></td>
+							<td style="text-align: right;">0</td>
+							<td style="text-align: right;">0</td>
+							<td style="text-align: right;">0</td>
+							<td style="text-align: right;">0</td>
+							<td style="text-align: right;">0</td>
+							<td style="text-align: right;">0</td>
+							<td style="text-align: right;">0</td>
+							<td style="text-align: right;">0</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Less Competitive Impact (Units)</strong></td>
+							<td style="text-align: right;">(4,002)</td>
+							<td style="text-align: right;">(587)</td>
+							<td style="text-align: right;">(644)</td>
+							<td style="text-align: right;">(2,526)</td>
+							<td style="text-align: right;">0</td>
+							<td style="text-align: right;">0</td>
+							<td style="text-align: right;">(568)</td>
+							<td style="text-align: right;">0</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Duracell Event Actual ROI (%)</strong></td>
+							<td style="text-align: right;">-76%</td>
+							<td style="text-align: right;">40%</td>
+							<td style="text-align: right;">41%</td>
+							<td style="text-align: right;">-24%</td>
+							<td style="text-align: right;">-86%</td>
+							<td style="text-align: right;">-55%</td>
+							<td style="text-align: right;">-44%</td>
+							<td style="text-align: right;">-34%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Duracell Event Actual Sales Uplift (%)</strong></td>
+							<td style="text-align: right;">5%</td>
+							<td style="text-align: right;">26%</td>
+							<td style="text-align: right;">26%</td>
+							<td style="text-align: right;">11%</td>
+							<td style="text-align: right;">2%</td>
+							<td style="text-align: right;">6%</td>
+							<td style="text-align: right;">7%</td>
+							<td style="text-align: right;">9%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 49px;">
+							<td style="text-align: left;"><strong>Duracell Actual Incremental Volume (Units)</strong></td>
+							<td style="text-align: right;">2,330</td>
+							<td style="text-align: right;">5,871</td>
+							<td style="text-align: right;">6,228</td>
+							<td style="text-align: right;">5,275</td>
+							<td style="text-align: right;">402</td>
+							<td style="text-align: right;">1,561</td>
+							<td style="text-align: right;">4,090</td>
+							<td style="text-align: right;">2,567</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 49px;">
+							<td style="text-align: left;"><strong>Duracell Actual Incremental Revenue ($) </strong></td>
+							<td style="text-align: right;">$9,666</td>
+							<td style="text-align: right;">$25,325</td>
+							<td style="text-align: right;">$26,862</td>
+							<td style="text-align: right;">$23,128</td>
+							<td style="text-align: right;">$1,783</td>
+							<td style="text-align: right;">$6,890</td>
+							<td style="text-align: right;">$18,011</td>
+							<td style="text-align: right;">$11,278</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Duracell Actual Incremental Profit ($)</strong></td>
+							<td style="text-align: right;">($31,846)</td>
+							<td style="text-align: right;">$7,183</td>
+							<td style="text-align: right;">$7,655</td>
+							<td style="text-align: right;">($7,109)</td>
+							<td style="text-align: right;">($10,831)</td>
+							<td style="text-align: right;">($8,21)1</td>
+							<td style="text-align: right;">($13,523)</td>
+							<td style="text-align: right;">($5,514)</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Cost per Incremental Unit (Vol)</strong></td>
+							<td style="text-align: right;">$17.92</td>
+							<td style="text-align: right;">$3.03</td>
+							<td style="text-align: right;">$3.02</td>
+							<td style="text-align: right;">$5.60</td>
+							<td style="text-align: right;">$31.22</td>
+							<td style="text-align: right;">$9.51</td>
+							<td style="text-align: right;">$7.56</td>
+							<td style="text-align: right;">$6.40</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Cost per Incremental Dollar (Rev)</strong></td>
+							<td style="text-align: right;">$4.32</td>
+							<td style="text-align: right;">$0.70</td>
+							<td style="text-align: right;">$0.70</td>
+							<td style="text-align: right;">$1.28</td>
+							<td style="text-align: right;">$7.03</td>
+							<td style="text-align: right;">$2.15</td>
+							<td style="text-align: right;">$1.72</td>
+							<td style="text-align: right;">$1.46</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Profit per Incremental Unit ($)</strong></td>
+							<td style="text-align: right;">($13.67)</td>
+							<td style="text-align: right;">$1.22</td>
+							<td style="text-align: right;">$1.23</td>
+							<td style="text-align: right;">($1.35)</td>
+							<td style="text-align: right;">($26.97)</td>
+							<td style="text-align: right;">($5.26)</td>
+							<td style="text-align: right;">($3.31)</td>
+							<td style="text-align: right;">($2.15)</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>% Trade Pass-Thru (%)</strong></td>
+							<td style="text-align: right;">76%</td>
+							<td style="text-align: right;">88%</td>
+							<td style="text-align: right;">108%</td>
+							<td style="text-align: right;">82%</td>
+							<td style="text-align: right;">116%</td>
+							<td style="text-align: right;">127%</td>
+							<td style="text-align: right;">108%</td>
+							<td style="text-align: right;">124%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Retailer Promo Margin(%)</strong></td>
+							<td style="text-align: right;">33%</td>
+							<td style="text-align: right;">31%</td>
+							<td style="text-align: right;">29%</td>
+							<td style="text-align: right;">29%</td>
+							<td style="text-align: right;">29%</td>
+							<td style="text-align: right;">27%</td>
+							<td style="text-align: right;">29%</td>
+							<td style="text-align: right;">28%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Retailer Incremental Revenue ($)</strong></td>
+							<td style="text-align: right;">$14,535</td>
+							<td style="text-align: right;">$36,643</td>
+							<td style="text-align: right;">$37,658</td>
+							<td style="text-align: right;">$32,744</td>
+							<td style="text-align: right;">$2,497</td>
+							<td style="text-align: right;">$9,422</td>
+							<td style="text-align: right;">$25,352</td>
+							<td style="text-align: right;">$15,662</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Retailer Incremental Profit ($)</strong></td>
+							<td style="text-align: right;">$4,868</td>
+							<td style="text-align: right;">$11,319</td>
+							<td style="text-align: right;">$10,796</td>
+							<td style="text-align: right;">$9,616</td>
+							<td style="text-align: right;">$715</td>
+							<td style="text-align: right;">$2,532</td>
+							<td style="text-align: right;">$7,341</td>
+							<td style="text-align: right;">$4,384</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Incremental Consumption Units</strong></td>
+							<td style="text-align: right;">2,330</td>
+							<td style="text-align: right;">5,871</td>
+							<td style="text-align: right;">6,228</td>
+							<td style="text-align: right;">5,275</td>
+							<td style="text-align: right;">402</td>
+							<td style="text-align: right;">1,561</td>
+							<td style="text-align: right;">4,090</td>
+							<td style="text-align: right;">2,567</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>PPG Gross Margin($)</strong></td>
+							<td style="text-align: right;">$4.25</td>
+							<td style="text-align: right;">$4.25</td>
+							<td style="text-align: right;">$4.25</td>
+							<td style="text-align: right;">$4.25</td>
+							<td style="text-align: right;">$4.25</td>
+							<td style="text-align: right;">$4.25</td>
+							<td style="text-align: right;">$4.25</td>
+							<td style="text-align: right;">$4.25</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>PPG Fross Margin  (%)</strong></td>
+							<td style="text-align: right;">76%</td>
+							<td style="text-align: right;">76%</td>
+							<td style="text-align: right;">76%</td>
+							<td style="text-align: right;">76%</td>
+							<td style="text-align: right;">76%</td>
+							<td style="text-align: right;">76%</td>
+							<td style="text-align: right;">76%</td>
+							<td style="text-align: right;">76%</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Floor Price ($)</strong></td>
+							<td style="text-align: right;">$5.99</td>
+							<td style="text-align: right;">$5.99</td>
+							<td style="text-align: right;">$5.99</td>
+							<td style="text-align: right;">$5.99</td>
+							<td style="text-align: right;">$5.99</td>
+							<td style="text-align: right;">$5.99</td>
+							<td style="text-align: right;">$5.99</td>
+							<td style="text-align: right;">$5.99</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Net Unit Cost($)</strong></td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>Retailer Net Unit Cost ($)</strong></td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+							<td style="text-align: right;">$4.45</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align: left;"><strong>ScanAmount ($)</strong></td>
+							<td style="text-align: right;">$0.48</td>
+							<td style="text-align: right;">$0.48</td>
+							<td style="text-align: right;">$0.48</td>
+							<td style="text-align: right;">$0.48</td>
+							<td style="text-align: right;">$0.48</td>
+							<td style="text-align: right;">$0.48</td>
+							<td style="text-align: right;">$0.48</td>
+							<td style="text-align: right;">$0.48</td>
+						</tr>
+						<tr class="ui-widget-content" style="height: 31px;">
+							<td style="text-align:left"><strong>Scan Dollars ($)</strong></td>
+							<td style="text-align: right;">$25,655</td>
+							<td style="text-align: right;">$13,836</td>
+							<td style="text-align: right;">$14,641</td>
+							<td style="text-align: right;">$25,993</td>
+							<td style="text-align: right;">$12,269</td>
+							<td style="text-align: right;">$13,800</td>
+							<td style="text-align: right;">$28,166</td>
+							<td style="text-align: right;">$14,703</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--</div>
 			</div>
 		<!--</div>
 		<!--<div class="report invisible">
@@ -940,8 +972,8 @@
 					<div class="panel panel-default content-card">
 						<iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiYjhiOGEyODQtNmU2Ni00OTE4LTkyZTQtZTI1MTllOTg2NGIwIiwidCI6IjViOTczZjk5LTc3ZGYtNGJlYi1iMjdkLWFhMGM3MGI4NDgyYyIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe>
 							<!--<iframe width="1280" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiYzlmMjZmNzktZWVhNi00M2M1LTg0ZWEtMGViNWExMTM4MWVjIiwidCI6ImJlNjM3MzRhLTk2YzUtNGU1NC04MDQ5LTcyYjZhZTEwZTM1NiIsImMiOjZ9"-->
-							<!--frameborder="0" allowfullscreen="true"></iframe>-->
-					<!--</div>
+	<!--frameborder="0" allowfullscreen="true"></iframe>-->
+	<!--</div>
 				</div>
 			</div>
 			<div class="row">
@@ -953,7 +985,7 @@
 									<tr style="height: 121px;">
 										<th style="width: 270px; text-align: left;">Event Description (Based on Duracell Promo Calendars)</th>-->
 
-										<!--<th>Super event, back to school super sale digital</th>
+	<!--<th>Super event, back to school super sale digital</th>
 							<th>Super event, back to school super sale digital</th>
 							<th>feature, 10/$10 sale, promoted price</th>
 							<th>feature, price &amp; item event</th>
@@ -965,7 +997,7 @@
 							<th>feature, 10/$10; chips new style</th>
 							<th>digital coupon, bts digital coupon event</th>
 							<th>feature, 10/$10; private selection</th>-->
-									<!--</tr>
+	<!--</tr>
 								</thead>
 							</table>
 							<div class="ft_cwrapper" style="width: 141px; height: 483px;">
@@ -993,7 +1025,7 @@
 							<th>feature, 10/$10; chips new style</th>
 							<th>digital coupon, bts digital coupon event</th>
 							<th>feature, 10/$10; private selection</th>-->
-										<!--</tr>
+	<!--</tr>
 									</thead>
 									<tbody>
 										<tr class="ui-widget-content" style="height: 31px;">
@@ -1108,7 +1140,7 @@
 											<th style="width: 135px; text-align: right;">Display None TPR 5.99.</th>
 											<th style="width: 135px; text-align: right;">Display None TPR 5.99..</th>
 											<th style="width: 135px; text-align: right;">Display None Feature 5.99..</th>-->
-											<!--<th>Super event, back to school super sale digital</th>
+	<!--<th>Super event, back to school super sale digital</th>
 							<th>Super event, back to school super sale digital</th>
 							<th>feature, 10/$10 sale, promoted price</th>
 							<th>feature, price &amp; item event</th>
@@ -1120,7 +1152,7 @@
 							<th>feature, 10/$10; chips new style</th>
 							<th>digital coupon, bts digital coupon event</th>
 							<th>feature, 10/$10; private selection</th>-->
-										<!--</tr>
+	<!--</tr>
 									</thead>
 								</table>
 							</div>
@@ -1137,7 +1169,7 @@
 											<th style="width: 135px; text-align: right;">Display None TPR 5.99.</th>
 											<th style="width: 135px; text-align: right;">Display None TPR 5.99..</th>
 											<th style="width: 135px; text-align: right;">Display None Feature 5.99..</th>-->
-											<!--<th>Super event, back to school super sale digital</th>
+	<!--<th>Super event, back to school super sale digital</th>
 							<th>Super event, back to school super sale digital</th>
 							<th>feature, 10/$10 sale, promoted price</th>
 							<th>feature, price &amp; item event</th>
@@ -1149,7 +1181,7 @@
 							<th>feature, 10/$10; chips new style</th>
 							<th>digital coupon, bts digital coupon event</th>
 							<th>feature, 10/$10; private selection</th>-->
-										<!--</tr>
+	<!--</tr>
 									</thead>
 									<tbody>
 										<tr class="ui-widget-content" style="height: 31px;">
@@ -1897,11 +1929,11 @@
 			</div>
 		</div>-->
 
-		<div class="row">
-			<div class="col col-xs-12">
-				<button class="btn btn-custom btn-block"><span class="fa fa-comments"></span> Add/View Comments</button>
-			</div>
+	<div class="row">
+		<div class="col col-xs-12">
+			<button class="btn btn-custom btn-block"><span class="fa fa-comments"></span> Add/View Comments</button>
 		</div>
+	</div>
 	</div>
 
 
@@ -1918,7 +1950,7 @@
 		</div>
 	</footer>
 
-	<script src="lib/jquery/js/jquery-1.10.2.min.js"></script>
+	<!--<script src="lib/jquery/js/jquery-1.10.2.min.js"></script>-->
 
 	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 
@@ -1927,29 +1959,26 @@
 	<script src="js/scripts.js"></script>
 
 	<script type="text/javascript">
-																					 function loadProducts(id) {
-																						 var country = document.getElementById('result1').innerHTML;
-																						 var retailer = document.getElementById('result4').innerHTML;
-																						 var channel = document.getElementById('result3').innerHTML;
-																						 var category = document.getElementById('result2').innerHTML;
-																						 var ppg = document.getElementById('result5').innerHTML;
-																						 document.getElementById(id).href += "?country=" + country + "&retailer=" + retailer + "&channel=" + channel + "&category=" + category + "&ppg=" + ppg;
-																						 //    var url = "MyPage2.html?passmonth=" + mymonth + "&passdate=" + myday + "&passyear=" + myyear;
-																						 //window.location.href = url;
-																						 //alert(url);
-																						 return false;
-																					 }
+		function loadProducts(id) {
+
+			var country = document.getElementById('result1').innerHTML;
+			var retailer = document.getElementById('result4').innerHTML;
+			var channel = document.getElementById('result3').innerHTML;
+			var category = document.getElementById('result2').innerHTML;
+			var ppg = document.getElementById('result5').innerHTML;
+			var daterange = document.getElementById('result6').innerHTML;
+			document.getElementById(id).href += "?country=" + country + "&retailer=" + retailer + "&channel=" + channel + "&category=" + category + "&ppg=" + ppg + "&daterange=" + daterange;
+
+			return false;
+		}																								  
 	</script>
-
-	<script type="text/javascript">
+	<script type="text/javascript">	
 		function getUrlParams() {
-
 			var paramMap = {};
 			if (location.search.length == 0) {
 				return paramMap;
 			}
 			var parts = location.search.substring(1).split("&");
-
 			for (var i = 0; i < parts.length; i++) {
 				var component = parts[i].split("=");
 				paramMap[decodeURIComponent(component[0])] = decodeURIComponent(component[1]);
@@ -1957,13 +1986,44 @@
 			return paramMap;
 		}
 		var params = getUrlParams();
-		//alert(params['passmonth']);
+		
 		document.getElementById('result1').innerHTML = params["country"] === undefined ? "- Select One -" : params["country"];
 		document.getElementById('result2').innerHTML = params["category"] === undefined ? "- Select One -" : params["category"];
 		document.getElementById('result3').innerHTML = params["channel"] === undefined ? "- Select One -" : params["channel"];
 		document.getElementById('result4').innerHTML = params["retailer"] === undefined ? "- Select One -" : params["retailer"];
 		document.getElementById('result5').innerHTML = params["ppg"] === undefined ? "- Select One -" : params["ppg"];
-        //var url = "price-diagnostic.html?country=" + country + "&retailer=" + retailer + "&channel=" + channel + "&category=" + category + "&category=" + category;
+		document.getElementById('result6').innerHTML = params["daterange"] === undefined ? "- Select One -" : params["daterange"];
+             //var url = "price-diagnostic.html?country=" + country + "&retailer=" + retailer + "&channel=" + channel + "&category=" + category + "&category=" + category;
+	</script>
+
+	<script type="text/javascript">
+		$(function () {
+
+			var start = moment().subtract(29, 'days');
+			var end = moment();
+
+			function cb(start, end) {
+				//$('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+				$('#reportrange span').innerHTML  = params["daterange"];
+			}
+
+			$('#reportrange').daterangepicker({
+				startDate: start,
+				endDate: end,
+				ranges: {
+					'Today': [moment(), moment()],
+					'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+					'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+					'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+					'This Month': [moment().startOf('month'), moment().endOf('month')],
+					'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+				}
+			}, cb);
+
+			cb(start, end);
+
+		});
+
 	</script>
 
 </body>
