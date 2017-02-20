@@ -27,21 +27,26 @@
 
 	<link href="css/offcanvas.css" rel="stylesheet" type="text/css">
 
-	<script src="js/qx-all.js"></script>
-	<script src="js/globalize.js"></script>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-	<script>
-		$("#dateRangePicker").jqxCalendar({
-			width: '200px',
-			height: '200px',
-			enableTooltips: true
-		});
-		var date = new Date();
-		date.setDate(5);
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" /> -->
 
-		$("#dateRangePicker").jqxCalendar('addSpecialDate', date, "", "Special Date");
-	</script>
+	<!-- Include Date Range Picker -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+
+
+
+
+
+
+
 </head>
 
 <body>
@@ -176,7 +181,16 @@
 						</ul>
 					</div>
 
+
 					<div class="btn-group">
+						<div id="reportrange" class="pull-right  btn btn-custom dropdown-toggle" style="background: #ffe600; cursor: pointer;width: 100%; height: 46.4px">
+							<!--<i class="glyphicon glyphicon-calendar fa fa-calendar"></i> -->
+							<div class="small">Date Range Selector</div>
+							<span  id="result6"></span> <b class="caret"></b>
+						</div>
+					</div>
+
+					<!--<div class="btn-group">
 						<button type="button" class="btn btn-custom dropdown-toggle" data-toggle="collapse" data-target="#dateRangePicker" aria-expanded="false"
 							aria-controls="dateRangePicker"><span class="small">Date Range Selector</span>&nbsp;<span class="hidden picked-date"><b>01/07/2015 - 12/20/2015</b></span><span
 								class="caret"></span>
@@ -237,13 +251,15 @@
 									<td>29</td><td>30</td><td>31</td>
 									</tr>
 									</tbody>
-								</table>-->
+								</table>
 								<div>
 
 								</div>
 
 							</div>
-					</div>
+					</div>-->
+
+
 				</div>
 				<p class="pull-right visible-xs">
 					<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle Filters</button>
@@ -541,7 +557,7 @@
 	</div>
 
 
-	<script src="lib/jquery/js/jquery-1.10.2.min.js"></script>
+	<!--<script src="lib/jquery/js/jquery-1.10.2.min.js"></script>-->
 
 	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 
@@ -549,6 +565,20 @@
 	<script src="lib/fixed-table/js/fixed_table_rc.js"></script>
 
 	<script src="js/scripts.js"></script>
+
+	<script type="text/javascript">
+		function loadProducts(id) {
+			var country = document.getElementById('result1').innerHTML;
+			var retailer = document.getElementById('result4').innerHTML;
+			var channel = document.getElementById('result3').innerHTML;
+			var category = document.getElementById('result2').innerHTML;
+			var ppg = document.getElementById('result5').innerHTML;
+			var daterange = document.getElementById('result6').innerHTML;
+			document.getElementById(id).href += "?country=" + country + "&retailer=" + retailer + "&channel=" + channel + "&category=" + category + "&ppg=" + ppg + "&daterange=" + daterange;
+
+			return false;
+		}																								  
+	</script>
 
 	<script type="text/javascript">
 		function getUrlParams() {
@@ -572,23 +602,38 @@
 		document.getElementById('result3').innerHTML = params["channel"] === undefined ? "- Select One -" : params["channel"];
 		document.getElementById('result4').innerHTML = params["retailer"] === undefined ? "- Select One -" : params["retailer"];
 		document.getElementById('result5').innerHTML = params["ppg"] === undefined ? "- Select One -" : params["ppg"];
+		document.getElementById('result6').innerHTML = params["daterange"] === undefined ? "- Select One -" : params["daterange"];
         //var url = "price-diagnostic.html?country=" + country + "&retailer=" + retailer + "&channel=" + channel + "&category=" + category + "&category=" + category;
 	</script>
-	<script type="text/javascript">
-		function loadProducts(id) {
-			var country = document.getElementById('result1').innerHTML;
-			var retailer = document.getElementById('result4').innerHTML;
-			var channel = document.getElementById('result3').innerHTML;
-			var category = document.getElementById('result2').innerHTML;
-			var ppg = document.getElementById('result5').innerHTML;
-			//alert(document.getElementById(id).href);
-			document.getElementById(id).href += "?country=" + country + "&retailer=" + retailer + "&channel=" + channel + "&category=" + category + "&ppg=" + ppg;
-			//    var url = "MyPage2.html?passmonth=" + mymonth + "&passdate=" + myday + "&passyear=" + myyear;
-			//document.getElementById('trade_prom').href = url;
-			//window.location.href = url;
-			//alert(url);
-			return false;
-		}
+
+		<script type="text/javascript">
+		$(function () {
+
+			var start = moment().subtract(29, 'days');
+			var end = moment();
+
+			function cb(start, end) {
+				//$('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+				$('#reportrange span').innerHTML  = params["daterange"] === undefined ? $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY')) : params["daterange"];
+			}
+
+			$('#reportrange').daterangepicker({
+				startDate: start,
+				endDate: end,
+				ranges: {
+					'Today': [moment(), moment()],
+					'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+					'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+					'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+					'This Month': [moment().startOf('month'), moment().endOf('month')],
+					'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+				}
+			}, cb);
+
+			cb(start, end);
+
+		});
+
 	</script>
    
    <script type="text/javascript">
