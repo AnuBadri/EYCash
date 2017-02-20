@@ -168,14 +168,14 @@ x
 			<div class="main container-fluid">
 				<div class="report">
 					<div class="row">
-						<div class="col col-lg-9">
+						<div onclick = "replace()" class="col col-lg-9">
 							<!--<iframe width="1280" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiNmY3MjFjNzUtNTg5Ni00MjdiLWEyZWMtOTc0NGI1Y2U5OTk5IiwidCI6IjViOTczZjk5LTc3ZGYtNGJlYi1iMjdkLWFhMGM3MGI4NDgyYyIsImMiOjF9"
 								frameborder="0" allowFullScreen="true"></iframe>-->
 								
 								<iframe width="1200" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiNmU3OTZhYmUtYzE0MC00MjJjLThlN2MtZjU2NTc1NDE4NDMyIiwidCI6IjViOTczZjk5LTc3ZGYtNGJlYi1iMjdkLWFhMGM3MGI4NDgyYyIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe>
 								<!--<iframe width="1280" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiZTYyNDA0N2EtNTUzYy00ODc4LWJmZmItYWEzMTE0NWJiZmU0IiwidCI6ImJlNjM3MzRhLTk2YzUtNGU1NC04MDQ5LTcyYjZhZTEwZTM1NiIsImMiOjZ9" frameborder="0" allowfullscreen="true"></iframe>-->
 						</div>
-						<div class="col col-lg-3 sidebar">
+						<div id = "div2" style="display:none" class="col col-lg-3 sidebar">
 							<div class="well insights">
 								<h4 class="panel-title">Pricing Simulation<br>Key Insights</h4>
 								<br>
@@ -254,7 +254,7 @@ x
 				<div class="report hidden">
 					<div class="row">
 						<!-- main content area -->
-						<div class="col col-lg-9">
+						<div onclick = "replace()" class="col col-lg-9">
 							<!--<iframe width="1280" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiNmY3MjFjNzUtNTg5Ni00MjdiLWEyZWMtOTc0NGI1Y2U5OTk5IiwidCI6IjViOTczZjk5LTc3ZGYtNGJlYi1iMjdkLWFhMGM3MGI4NDgyYyIsImMiOjF9"
 								frameborder="0" allowFullScreen="true"></iframe>-->
 								
@@ -265,7 +265,7 @@ x
 							<div class="well insights" id="table1">
 								<h4 class="panel-title">Pricing Simulation<br>Key Insights</h4>
 								<br>
-								<div class="panel panel-default content-card">
+								<div id="div1" style = "display: block" class="panel panel-default content-card">
 									<table class="table table-striped table-bordered table-condensed data-table">
 										<thead>
 											<tr>
@@ -278,25 +278,25 @@ x
 										<tbody>
 											<tr>
 												<td>Price</td>
-												<td class="gradeC">$ 4.21</td>
+												<td>$ 4.21</td>
 												<td>$ 0</td>
 												<td>$ 0</td>
 											</tr>
 											<tr>
 												<td>Volume</td>
-												<td class="gradeC">23,446.25</td>
+												<td>23,446.25</td>
 												<td>0</td>
 												<td>0</td>
 											</tr>
 											<tr>
 												<td>Revenue</td>
-												<td class="gradeC">98,598.61</td>
+												<td>98,598.61</td>
 												<td>0</td>
 												<td>0</td>
 											</tr>
 											<tr>
 												<td>Profit</td>
-												<td class="gradeC">-56,752.92</td>
+												<td>-56,752.92</td>
 												<td>0</td>
 												<td>0</td>
 											</tr>
@@ -928,6 +928,13 @@ x
 		document.getElementById('result4').innerHTML = params["retailer"] === undefined ? "- Select One -" : params["retailer"];
 		document.getElementById('result5').innerHTML = params["ppg"] === undefined ? "- Select One -" : params["ppg"];
             //var url = "price-diagnostic.html?country=" + country + "&retailer=" + retailer + "&channel=" + channel + "&category=" + category + "&category=" + category;
+	</script>
+
+	<script type = "text/javascript">
+	function replace() {
+		document.getElementById("div1").style.display="none";
+		document.getElementById("div2").style.display="block";
+	}
 	</script>
 </body>
 
